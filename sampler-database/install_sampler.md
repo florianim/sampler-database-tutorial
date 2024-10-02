@@ -6,4 +6,9 @@ In order to install sampler, execute the following steps:
 
  `sudo chmod +x /usr/local/bin/sampler`{{exec}}
 
+Check version
+
+`sampler --version`{{exec}}
+
  For other operating systems you can find the installation instructions on [the official sampler website](https://sampler.dev/).
+
