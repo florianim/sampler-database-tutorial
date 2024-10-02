@@ -8,6 +8,9 @@
     "steps": [
       {
         "text": "step1.md"
+      },
+      {
+        "text": "database.md"
       }
     ]
   },
