@@ -20,7 +20,7 @@ First open mysql
 
 `mysql`{{exec}}
 
-`CREATE TABLE metrics ( id INT AUTO_INCREMENT PRIMARY KEY, value FLOAT NOT NULL, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP); INSERT INTO metrics (value) VALUES (10.5), (14.8), (12.1), (9.4), (15.7);`{{exec}}
+`USE test_db; CREATE TABLE metrics ( id INT AUTO_INCREMENT PRIMARY KEY, value FLOAT NOT NULL, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP); INSERT INTO metrics (value) VALUES (10.5), (14.8), (12.1), (9.4), (15.7);`{{exec}}
 
 
 ## Barcharts configuration: extracting data from test_db
