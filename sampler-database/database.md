@@ -46,15 +46,12 @@ Press enter for no password
 ### Step 6: Create a Test Database and User
 Inside the MySQL shell, you can create a test database and a new user:
 
-```
-CREATE DATABASE test_db;
-CREATE USER 'test_user'@'localhost' IDENTIFIED BY 'password';
-GRANT ALL PRIVILEGES ON test_db.* TO 'test_user'@'localhost';
-FLUSH PRIVILEGES;
-EXIT;
-```{{exec}}
 
-```
+`CREATE DATABASE test_db;`{{exec}}
+`CREATE USER 'test_user'@'localhost' IDENTIFIED BY 'password';`{{exec}}
+`GRANT ALL PRIVILEGES ON test_db.* TO 'test_user'@'localhost';`{{exec}}
+`FLUSH PRIVILEGES;`{{exec}}
+`EXIT;`{{exec}}
 
 ## Installing PostgreSQL
 
@@ -86,12 +83,12 @@ Access the PostgreSQL shell by typing:
 
 Inside the PostgreSQL shell, create a new database and user:
 
-```
-CREATE DATABASE test_db;
-CREATE USER test_user WITH PASSWORD 'password';
-GRANT ALL PRIVILEGES ON DATABASE test_db TO test_user;
-\q
-```{{exec}}
+
+`CREATE DATABASE test_db;`{{exec}}
+`CREATE USER test_user WITH PASSWORD 'password';`{{exec}}
+`GRANT ALL PRIVILEGES ON DATABASE test_db TO test_user;`{{exec}}
+`\q`{{exec}}
+
 
 
 ### Step 6: Exit the PostgreSQL User Session
@@ -105,12 +102,12 @@ GRANT ALL PRIVILEGES ON DATABASE test_db TO test_user;
 
 First, we need to add the MongoDB repository to the system. Run the following commands to do that:
 
-```
-sudo apt update
-sudo apt install gnupg -y
-wget -qO - https://www.mongodb.org/static/pgp/server-6.0.asc | sudo apt-key add -
-echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/6.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-6.0.list
-```{{exec}}
+
+`sudo apt update`{{exec}}
+`sudo apt install gnupg -y`{{exec}}
+`wget -qO - https://www.mongodb.org/static/pgp/server-6.0.asc | sudo apt-key add -`{{exec}}
+`echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/6.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-6.0.list`{{exec}}
+
 
 
 ### Step 2: Install MongoDB
@@ -137,10 +134,10 @@ To create a test database and user, open the MongoDB shell:
 
 Then, run the following commands inside the MongoDB shell:
 
-```
-use test_db
-db.createUser({user: "test_user", pwd: "password", roles: [{role: "readWrite", db: "test_db"}]})
-```{{exec}}
+
+`use test_db`{{exec}}
+`db.createUser({user: "test_user", pwd: "password", roles: [{role: "readWrite", db: "test_db"}]})`{{exec}}
+
 
 
 ### Step 5: Exit the MongoDB Shell
