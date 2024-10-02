@@ -38,7 +38,10 @@ Ensure that the MySQL service is running properly by starting it and checking it
 
 ### Step 5: Log in to MySQL
 You can now log in to MySQL using the root account:
+
 `sudo mysql -u root -p`{{exec}}
+
+Press enter for no password
 
 ### Step 6: Create a Test Database and User
 Inside the MySQL shell, you can create a test database and a new user:
@@ -50,6 +53,99 @@ GRANT ALL PRIVILEGES ON test_db.* TO 'test_user'@'localhost';
 FLUSH PRIVILEGES;
 EXIT;
 ```{{exec}}
+
+```
+
+## Installing PostgreSQL
+
+PostgreSQL is a powerful, open-source object-relational database system. Let’s move on to installing PostgreSQL.
+
+### Step 1: Install PostgreSQL
+
+`sudo apt install postgresql postgresql-contrib -y`{{exec}}
+
+### Step 2: Start and Check PostgreSQL Service
+
+`sudo systemctl start postgresql`{{exec}}
+
+`sudo systemctl status postgresql`{{exec}}
+
+### Step 3: Switch to PostgreSQL User
+
+In PostgreSQL, you typically interact with the database using the postgres user. Switch to the PostgreSQL user with this command:
+
+`sudo -i -u postgres`{{exec}}
+
+### Step 4: Access PostgreSQL Shell
+
+Access the PostgreSQL shell by typing:
+
+`psql`{{exec}}
+
+### Step 5: Create a Test Database and User
+
+Inside the PostgreSQL shell, create a new database and user:
+
+```
+CREATE DATABASE test_db;
+CREATE USER test_user WITH PASSWORD 'password';
+GRANT ALL PRIVILEGES ON DATABASE test_db TO test_user;
+\q
+```{{exec}}
+```
+
+### Step 6: Exit the PostgreSQL User Session
+
+`exit`{{exec}}
+
+
+## Installing MongoDB
+
+### Step 1: Add MongoDB Repository
+
+First, we need to add the MongoDB repository to the system. Run the following commands to do that:
+
+```
+sudo apt update
+sudo apt install gnupg -y
+wget -qO - https://www.mongodb.org/static/pgp/server-6.0.asc | sudo apt-key add -
+echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/6.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-6.0.list
+```{{exec}}
+```
+
+### Step 2: Install MongoDB
+
+After adding the repository, install MongoDB using the following command:
+
+`sudo apt update`{{exec}}
+
+`sudo apt install -y mongodb-org`{{exec}}
+
+### Step 3: Start and Verify MongoDB Service
+
+Start the MongoDB service and check its status:
+
+`sudo systemctl start mongod`{{exec}}
+
+`sudo systemctl status mongod`{{exec}}
+
+### Step 4: Create a Test Database and User in MongoDB
+
+To create a test database and user, open the MongoDB shell:
+
+`mongo`{{exec}}
+
+Then, run the following commands inside the MongoDB shell:
+
+```
+use test_db
+db.createUser({user: "test_user", pwd: "password", roles: [{role: "readWrite", db: "test_db"}]})
+```{{exec}}
+```
+
+### Step 5: Exit the MongoDB Shell
+
+`exit`{{exec}}
 
 
 
