@@ -13,11 +13,12 @@ MySQL is a popular relational database management system used for web and server
 First, ensure that your package list is updated by running the following command:
 
 
-'sudo apt update' {{exec}}
+`sudo apt update` {{exec}}
 
 ### Step 2: Install MySQL server using the following command:
 
-'sudo apt install mysql-server -y' {{exec}}
+`sudo apt install mysql-server -y` {{exec}}
+
 
 
 
