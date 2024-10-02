@@ -45,7 +45,38 @@ barcharts:
         sample: "echo \"SELECT AVG(value) FROM metrics;\" | mysql -u test_user -ppassword test_db -N"
 ```
 
+### Detailed Explanation of Configuration Items
 
+The configuration below can be modified in any way, and you can configure different combinations to suit your situation.
+
+title: “Test Database Metrics Overview”.
+This is the title of the chart, which indicates that it shows some basic statistics about the metrics table in the test_db database.
+
+rate-ms: 2000.
+The data is refreshed every 2000 milliseconds (2 seconds) to ensure that the data on the chart is up to date.
+
+items.
+This lists some of the metrics to be displayed. Each item represents a bar in the chart, and each bar performs a database query.
+
+label: “Total Records”.
+This bar displays the total number of records in the metrics table. The query command is SELECT COUNT(*).
+
+label: “Max Value”.
+This bar displays the maximum value of the value column in the metrics table. The query command is SELECT MAX(value).
+
+label: “Min Value”.
+This bar displays the minimum value of the value column in the metrics table. The query command is SELECT MIN(value).
+
+label: “Average Value”: The bar displays the minimum value of the value column in the metrics table.
+This bar displays the average value of the value column in the metrics table. The query command is SELECT AVG(value).
+
+## Running the Sampler
+
+Once you have configured barchart, you can run Sampler with the following command and load your configuration file:
+
+`sampler -c mysql_visualization.yml`
+
+In this way, Sampler will display the real-time data you define in the MySQL database according to the configuration, and the bars will automatically refresh the data according to the time interval defined by rate-ms.
 
 
 
