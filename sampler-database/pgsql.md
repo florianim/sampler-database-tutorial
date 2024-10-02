@@ -14,7 +14,7 @@ PostgreSQL is a powerful, open-source object-relational database system. Let’s
 
 If you see something like this, it proves that your installation was successful.
 
-![Mysql Status](./img/pgsql.png)
+![PGSQL Status](./img/pgsql.png)
 
 ### Step 3: Switch to PostgreSQL User
 
