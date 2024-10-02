@@ -79,7 +79,7 @@ This bar displays the average value of the value column in the metrics table. Th
 
 Once you have configured barchart, you can run Sampler with the following command and load your configuration file:
 
-`sampler -c mysql_visualization.yml`
+`sampler -c mysql_visualization.yml`{{exec}}
 
 In this way, Sampler will display the real-time data you define in the MySQL database according to the configuration, and the bars will automatically refresh the data according to the time interval defined by rate-ms.
 
