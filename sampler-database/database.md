@@ -36,6 +36,11 @@ Ensure that the MySQL service is running properly by starting it and checking it
 
 `sudo systemctl status mysql`{{exec}}
 
+If you see something like this, it proves that your installation was successful.
+
+![Mysql Status](./image/mysql.png)
+
+
 ### Step 5: Log in to MySQL
 
 You can now log in to MySQL using the root account:
@@ -72,6 +77,10 @@ PostgreSQL is a powerful, open-source object-relational database system. Let’s
 `sudo systemctl start postgresql`{{exec}}
 
 `sudo systemctl status postgresql`{{exec}}
+
+If you see something like this, it proves that your installation was successful.
+
+![Mysql Status](./image/pgsql.png)
 
 ### Step 3: Switch to PostgreSQL User
 
