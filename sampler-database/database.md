@@ -92,7 +92,7 @@ CREATE USER test_user WITH PASSWORD 'password';
 GRANT ALL PRIVILEGES ON DATABASE test_db TO test_user;
 \q
 ```{{exec}}
-```
+
 
 ### Step 6: Exit the PostgreSQL User Session
 
@@ -111,7 +111,7 @@ sudo apt install gnupg -y
 wget -qO - https://www.mongodb.org/static/pgp/server-6.0.asc | sudo apt-key add -
 echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/6.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-6.0.list
 ```{{exec}}
-```
+
 
 ### Step 2: Install MongoDB
 
@@ -141,7 +141,7 @@ Then, run the following commands inside the MongoDB shell:
 use test_db
 db.createUser({user: "test_user", pwd: "password", roles: [{role: "readWrite", db: "test_db"}]})
 ```{{exec}}
-```
+
 
 ### Step 5: Exit the MongoDB Shell
 
