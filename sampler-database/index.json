@@ -7,10 +7,13 @@
     },
     "steps": [
       {
-        "text": "step1.md"
+        "text": "mysql.md"
       },
       {
-        "text": "database.md"
+        "text": "pgsql.md"
+      },
+      {
+        "text": "mgdb.md"
       }
     ]
   },
