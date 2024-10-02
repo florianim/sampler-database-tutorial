@@ -29,6 +29,11 @@ We will use Sampler's barcharts to display some basic statistics from the databa
 
 Please put this part of the code in the yml file
 
+You can find and modify your yml file by following the steps shown here
+
+![Where is yml?](./img/bar1.png)
+
+
 ```
 barcharts:
   - title: "Test Database Metrics Overview"
