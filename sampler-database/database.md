@@ -139,13 +139,15 @@ After adding the repository, install MongoDB using the following command:
 
 `sudo apt install -y mongodb-org`{{exec}}
 
-`sudo apt install mongodb-clients`{{exec}}
-
 ### Step 3: Start and Verify MongoDB Service
 
 Start the MongoDB service and check its status:
 
 `sudo systemctl start mongod`{{exec}}
+
+Install the mongodb-clients
+
+`sudo apt install mongodb-clients`{{exec}}
 
 ### Step 4: Create a Test Database and User in MongoDB
 
