@@ -44,7 +44,9 @@ Open the .yml file you created earlier in the editor and copy the following cont
 
 ```
 variables:
-    psql: psql -U postgres -d test_db -t -c 
+  PGPASSWORD: 123
+  postgres_connection: psql -h localhost -U postgres -d test_db --no-align --tuples-only -c 
+
 
 barcharts:
   - title: PostgreSQL Metrics
@@ -59,6 +61,7 @@ barcharts:
         sample: $postgres_connection "SELECT sum(blks_read) FROM pg_stat_database WHERE datname='test_db';"
       - label: Blocks Hit
         sample: $postgres_connection "SELECT sum(blks_hit) FROM pg_stat_database WHERE datname='test_db';"
+
 
 ```
 
