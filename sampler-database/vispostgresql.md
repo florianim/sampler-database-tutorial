@@ -7,7 +7,7 @@ Go to the PostgreSQL shell:
 `psql`{{exec}}
 
 Create a table for our sample data:
-````
+```
 CREATE TABLE numbers (
     id SERIAL PRIMARY KEY,
     value INTEGER
@@ -52,7 +52,7 @@ gauges:
       sample: echo 100
     min:
       sample: echo 0
-```
+```{{copy}}
 
 ## Run sampler
 Now you run sampler using `sampler --config postgresql_vis.yml`{{exec}}. Feel free to edit the YAML configuration to try other visualizations!
