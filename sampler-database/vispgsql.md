@@ -42,22 +42,19 @@ Open the .yml file you created earlier in the editor and copy the following cont
 variables:
     psql: psql -U postgres -d test_db -t -c 
 
-textboxes:
-  - title: PostgreSQL Stats (Table)
-    rate-ms: 1000 
-    scale: 4 
-    sample: |
-      "Total Rows:        " + $psql "'SELECT COUNT(*) FROM metrics;'" + "\n" +
-      "Table Size (kB):   " + $psql "'SELECT pg_total_relation_size(''metrics'');'" + "\n" +
-      "Index Size (kB):   " + $psql "'SELECT pg_indexes_size(''metrics'');'" + "\n" +
-      "Avg Row Length:    " + $psql "'SELECT pg_column_size(row(SELECT * FROM metrics LIMIT 1));'"
-  - title: PostgreSQL Operations
+barcharts:
+  - title: PostgreSQL Metrics
     rate-ms: 1000
-    scale: 4
-    sample: |
-      "Transactions: " + $psql "'SELECT sum(xact_commit) FROM pg_stat_database WHERE datname=''test_db'';'" + "\n" +
-      "Reads:        " + $psql "'SELECT sum(blks_read) FROM pg_stat_database WHERE datname=''test_db'';'" + "\n" +
-      "Blocks Hit:   " + $psql "'SELECT sum(blks_hit) FROM pg_stat_database WHERE datname=''test_db'';'"
+    scale: 0
+    items:
+      - label: Total Records
+        sample: $postgres_connection "SELECT COUNT(*) FROM metrics;"
+      - label: Table Size (kB)
+        sample: $postgres_connection "SELECT pg_total_relation_size('metrics') / 1024;"
+      - label: Reads
+        sample: $postgres_connection "SELECT sum(blks_read) FROM pg_stat_database WHERE datname='test_db';"
+      - label: Blocks Hit
+        sample: $postgres_connection "SELECT sum(blks_hit) FROM pg_stat_database WHERE datname='test_db';"
 
 ```
 
