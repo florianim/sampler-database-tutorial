@@ -3,6 +3,9 @@
 Next we will explore Sparklines and Gauges. While Gauges give you the ability to see the current value of a statistic in a pleasant way, Sparklines allow you to see the history of a statistic for better, more comprehensive monitoring. We will demonstrate these two sampler features using our postgresql database.
 
 ## Add sample data to database
+Switch to the database user:
+`sudo -i -u postgres`{{exec}}
+
 Go to the PostgreSQL shell:
 `psql`{{exec}}
 
@@ -13,6 +16,7 @@ CREATE TABLE numbers (
     value INTEGER
 );
 ```{{exec}}
+
 Insert dummy data:
 ```
 INSERT INTO numbers (value) VALUES 
@@ -22,6 +26,12 @@ INSERT INTO numbers (value) VALUES
 (10),
 (20);
 ```{{exec}}
+
+Exit the postgres shell ...
+`exit`{{exec}}
+
+... and return to the standard user:
+`exit`{{exec}}
 
 
 ## Create YAML configuration file
