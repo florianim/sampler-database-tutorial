@@ -21,6 +21,10 @@ Access the PostgreSQL shell by typing:
 
 `psql`{{exec}}
 
+Set the password for the postgres user in the PostgreSQL Shell:
+`ALTER USER postgres PASSWORD '123';`{{exec}}
+
+
 In the PostgreSQL Shell, create a test database and table and insert some data:
 
 `CREATE DATABASE test_db;`{{exec}}
