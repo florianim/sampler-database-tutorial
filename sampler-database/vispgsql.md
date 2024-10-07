@@ -15,20 +15,25 @@ Create a file using the following command:
 ## Insert data to database
 
 Log in to the PostgreSQL Shell:
-`sudo -u postgres psql`{{exec}}
+`sudo -i -u postgres`{{exec}}
+
+Access the PostgreSQL shell by typing:
+
+`psql`{{exec}}
 
 In the PostgreSQL Shell, create a test database and table and insert some data:
 
-`CREATE DATABASE test_db;
-\c test_db
+`CREATE DATABASE test_db;`{{exec}}
 
-CREATE TABLE metrics (
-    id SERIAL PRIMARY KEY,
-    value FLOAT NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
 
-INSERT INTO metrics (value) VALUES (10.5), (15.3), (12.8), (9.4), (14.2);`{{exec}}
+`\c test_db`{{exec}}
+
+`CREATE TABLE metrics ( id SERIAL PRIMARY KEY, value FLOAT NOT NULL, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP );`{{exec}}
+
+`INSERT INTO metrics (value) VALUES (10.5), (15.3), (12.8), (9.4), (14.2);`{{exec}}
+
+`\q`{{exec}}
+
 
 ## Create .yml configuration
 Open the .yml file you created earlier in the editor and copy the following content to the file.
@@ -70,7 +75,11 @@ sample: Runs a SQL query using the commands in the $psql variable and displays t
 
 ## Run sampler
 
-Finally, you can run sampler using `sampler --config postgres_vis.yml`{{exec}}.
+`exit`{{exec}}
+
+
+
+Finally, you can run sampler using `sampler --config postgres_vis.yml`{{exec}}
 
 Feel free to play around with different configurations!
 
