@@ -1,4 +1,4 @@
-# Postgres Visualization
+# Mongodb Visualization
 
 ## Sparklines
 
@@ -49,7 +49,17 @@ textboxes:
         "Updates:  " + db.serverStatus().opcounters.update
 ```
 
-As you can see, we define two textboxes, one for general MongoDB stats and one for showing the total amount of various operations executed. You can have multiple stats within one textbox. The example configuration also shows how you can create a simple table within a textbox!
+Detailed explanation:
+
+variables: Defines a variable named mongo to simplify subsequent calls to MongoDB. This specifies the command to connect to MongoDB, which connects to the local test database.
+
+textboxes: Defines two textboxes for displaying MongoDB statistics and operation counts.
+
+The first textbox: MongoDB stats (Table) displays some basic MongoDB database statistics, such as the number of objects, total size, average object size, etc. This textbox will refresh every 1000 milliseconds. This textbox is refreshed every 1000 milliseconds.
+
+The second text box, MongoDB Operations, shows the count of operations in the database, including inserts, queries, updates, and so on.
+
+sample: defines specific commands for getting data from MongoDB. The db.stats() and db.serverStatus() methods are used to retrieve database statistics and operation counts, and output the results as a string. The \n in the output is used for line breaks so that the content is displayed as a table on the Sampler dashboard.
 
 ## Run sampler
 
