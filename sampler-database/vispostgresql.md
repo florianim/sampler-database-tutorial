@@ -45,10 +45,10 @@ sparklines:
   - title: PostgreSQL DB size
     rate-ms: 1000 
     scale: 4 
-    multistep-inig: 
+    multistep-init: 
       - sudo -i -u postgres
-      - psql
-    sample: SELECT pg_size_pretty(pg_database_size('test_db'));
+    sample: psql -U your_username -d test_db -t -c "SELECT pg_size_pretty(pg_database_size('test_db'));" | awk '{print $1}'
+
 gauges:
   - title: PostgreSQL Cache Hit Rate
     rate-ms: 500
