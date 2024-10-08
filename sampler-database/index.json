@@ -25,6 +25,9 @@
         "text": "vismongodb.md"
       },
       {
+        "text": "vispgsql.md"
+      },
+      {
         "text": "vispostgresql.md"
       }
     ]
