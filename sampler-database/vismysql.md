@@ -48,7 +48,7 @@ barcharts:
         sample: "echo \"SELECT MIN(value) FROM metrics;\" | mysql -u test_user -ppassword test_db -N"
       - label: "Average Value"
         sample: "echo \"SELECT AVG(value) FROM metrics;\" | mysql -u test_user -ppassword test_db -N"
-```
+```{{copy}}
 
 ### Detailed Explanation of Configuration Items
 
