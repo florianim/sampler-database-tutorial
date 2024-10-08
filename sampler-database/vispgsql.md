@@ -2,7 +2,7 @@
 
 
 
-## Adding Information with Textboxes, Barcharts and Gauges
+## Adding Information with Barcharts, Sparklines and Gauges
 
 Next we will explore Barcharts as well as Sparklines and Gauges. While Gauges give you the ability to see the current value of a statistic in a pleasant way, Sparklines allow you to see the history of a statistic for better, more comprehensive monitoring. We will demonstrate these three sampler features using our postgresql database.
 
