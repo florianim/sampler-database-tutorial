@@ -1,7 +1,5 @@
 # Mongodb Visualization
 
-## Sparklines
-
 ## Textboxes
 
 You can also use simple textboxes to add info to the sampler dashboard. Here, we will add basic information about our MongoDB database to sampler.
@@ -47,7 +45,7 @@ textboxes:
         "Inserts:  " + db.serverStatus().opcounters.insert
         "Queries:  " + db.serverStatus().opcounters.query
         "Updates:  " + db.serverStatus().opcounters.update
-```
+```{{copy}}
 
 Detailed explanation:
 
@@ -65,5 +63,3 @@ sample: defines specific commands for getting data from MongoDB. The db.stats() 
 
 Finally, you can run sampler using `sampler --config mongodb_vis.yml`{{exec}}.
 Feel free to play around with different configurations!
-
-## Gauges
